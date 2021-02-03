@@ -1,0 +1,14 @@
+baseURL: 'http://example.org/'
+languageCode: en-us
+title: Snippets
+theme: papermod
+params:
+  ShowReadingTime: true
+  homeInfoParams:
+    Title: "Hello"
+    Content: Quick and rough notes
+  socialIcons:
+    - name: twitter
+      url: 'https://twitter.com/SeanHood'
+    - name: github
+      url: 'https://github.com/SeanHood'
