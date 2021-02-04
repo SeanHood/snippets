@@ -1,5 +1,5 @@
-baseURL: 'http://example.org/'
-languageCode: en-us
+baseURL: 'https://snippets.snhd.co/'
+languageCode: en-gb
 title: Snippets
 theme: papermod
 params:
