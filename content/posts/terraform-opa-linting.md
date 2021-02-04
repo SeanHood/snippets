@@ -3,7 +3,6 @@ title: "Terraform and OPA/Conftest/Rego, what a pain in the arse"
 date: 2021-02-03T22:52:13Z
 draft: false
 ---
-# Terraform and OPA/Conftest/Rego, what a pain in the arse it is
 
 So this has taken me 24+ hours to figure out. All docs, references to using OPA
 with Terraform are about testing the plan. I want some static analysis on raw
@@ -21,7 +20,7 @@ which, maybe this will make sense in the future, but right now. Mind blown.
 Anyway, the thing you've been waiting for. Some examples.
 
 main.tf
-```terraform
+```json
 module "foo_app_uk_prod" {
   source = "./modules/foo"
 
