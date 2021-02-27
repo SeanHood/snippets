@@ -3,6 +3,7 @@ languageCode: en-gb
 title: Snippets
 theme: papermod
 params:
+  comments: true
   ShowReadingTime: true
   homeInfoParams:
     Title: "Hello"
