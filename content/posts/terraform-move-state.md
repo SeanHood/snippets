@@ -1,7 +1,7 @@
 ---
 title: "Terraform: Move resource from one state to another (Terraform Cloud)"
 date: 2021-02-10T15:12:03Z
-draft: true
+draft: false
 ---
 
 So I wanted to move a database cluster from one Terraform setup to another. I could have used `terraform import` but this can be a pain.
