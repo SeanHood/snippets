@@ -1,6 +1,6 @@
 ---
 title: "JSON Formatting for the Apache Log"
-date: 2021-07-23T18:18:53Z
+date: 2021-07-22T18:18:53Z
 draft: false
 ---
 
@@ -19,11 +19,11 @@ ErrorLogFormat "{ \
 \"function\": \"[%-m:%l]\", \
 \"process\": \"[pid%P]\", \
 \"message\": \"%M\", \
-\"request_id\": \" %{UNIQUE_ID}e \" \
+\"request_id\": \"%-L\" \
 }"
 
 LogFormat "{ \
-\"time\":\"%{%Y-%m-%d}tT%{%T}t.%{msec_frac}tZ\", \
+\"time\": \"%{%Y-%m-%d}t %{%T}t.%{usec_frac}t\", \
 \"process\": \"%D\", \
 \"filename\": \"%f\", \
 \"remoteIP\": \"%a\", \
@@ -35,17 +35,13 @@ LogFormat "{ \
 \"userAgent\": \"%{User-agent}i\", \
 \"referer\": \"%{Referer}i\", \
 \"request_time\": \"%D\", \
-\"request_id\": \"%{UNIQUE_ID}e\", \
+\"request_id\": \"%L\", \
 \"bytes_sent\": \"%B\", \
 \"x_forwarded_for\": \"%{X-Forwarded-For}i\" \
 }" json_combined
 ```
 
 I needed to enable 2 mods for this to work: `mod_remoteip` and `mod_unique_id`.
-
-### Bugs
-`request_id` in the error log needs some spaces around the variable. Or for some reason the quote disappear and you have invalid JSON
-`time`: Should be an fix but need to format the time in the same way between the error log and access log
 
 ### Future
 I'm currently looking to feed these logs into Honeycomb.io using AWS Firelens & FluentBit but that's a post for another day.
