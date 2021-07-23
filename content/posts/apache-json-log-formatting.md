@@ -43,5 +43,15 @@ LogFormat "{ \
 
 I needed to enable 2 mods for this to work: `mod_remoteip` and `mod_unique_id`.
 
+### Example
+
+A snippet of what sort of thing to expect from this config:
+```
+{ "time": "2021-07-23 10:44:54.445610", "function": "[mpm_prefork:notice]", "process": "[pid1]", "message": "AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations", "request_id": "-" }
+{ "time": "2021-07-23 10:44:54.445773", "function": "[core:notice]", "process": "[pid1]", "message": "AH00094: Command line: 'apache2 -D FOREGROUND'", "request_id": "-" }
+{ "time": "2021-07-23 10:44:59.314098", "function": "[cgi:error]", "process": "[pid18]", "message": "End of script output before headers: broken.cgi", "request_id": "YPqdq8DVJOLdwQumnetHPgAAAAA" }
+{ "time": "2021-07-23 10:44:59.310200", "process": "4233", "filename": "/var/www/html/cgi-bin/broken.cgi", "remoteIP": "172.27.0.1", "host": "localhost", "request": "/cgi-bin/broken.cgi", "query": "?foo=bar", "method": "GET", "status": "500", "userAgent": "curl/7.64.1", "referer": "-", "request_time": "4233", "request_id": "YPqdq8DVJOLdwQumnetHPgAAAAA", "bytes_sent": "534", "x_forwarded_for": "-" }
+```
+
 ### Future
 I'm currently looking to feed these logs into Honeycomb.io using AWS Firelens & FluentBit but that's a post for another day.
