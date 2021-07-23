@@ -19,7 +19,7 @@ ErrorLogFormat "{ \
 \"function\": \"[%-m:%l]\", \
 \"process\": \"[pid%P]\", \
 \"message\": \"%M\", \
-\"request_id\": \"%-L\" \
+\"request_id\": \"%-{UNIQUE_ID}e\" \
 }"
 
 LogFormat "{ \
@@ -35,7 +35,7 @@ LogFormat "{ \
 \"userAgent\": \"%{User-agent}i\", \
 \"referer\": \"%{Referer}i\", \
 \"request_time\": \"%D\", \
-\"request_id\": \"%L\", \
+\"request_id\": \"%{UNIQUE_ID}e\", \
 \"bytes_sent\": \"%B\", \
 \"x_forwarded_for\": \"%{X-Forwarded-For}i\" \
 }" json_combined
