@@ -105,4 +105,7 @@ pipeline {
 }
 ```
 
+Once you're all done, you should see something like this on your builds:
+
+![gitleaks-jenkins-screenshot](https://user-images.githubusercontent.com/135392/144628216-ea1b611a-74d2-47c5-94bf-4f5ea632ac55.png)
 
